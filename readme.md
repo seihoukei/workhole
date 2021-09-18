@@ -8,11 +8,14 @@ methods of that object** that **will be called in its native context**
 with arguments passed to that context and result being returned 
 back as a promise.
 
+Module is symmetrical with same file and methods used in both
+contexts.
+
 ## Usage
 
 ### Create a workhole
 
-in main context
+Main context:
 
 ```js
 import Workhole from "workhole.js"
@@ -23,7 +26,7 @@ const worker = new Worker("worker.js", {
 const workhole = new Workhole(worker)
 ```
 
-in worker
+Worker context:
 
 ```js
 import Workhole from "workhole.js"
@@ -33,7 +36,7 @@ const workhole = new Workhole(self)
 
 ### Share an object
 
-In "exporting" context:
+"Exporting" context:
 
 ```js
 const summator = {
@@ -45,7 +48,7 @@ const summator = {
 workhole.export(summator, "summator")
 ```
 
-In "importing" context:
+"Importing" context:
 
 ```js
 //does not care if object was actually exported
