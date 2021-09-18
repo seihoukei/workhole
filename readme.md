@@ -8,9 +8,9 @@ methods of that object** that **will be called in its native context**
 with arguments passed to that context and result being returned 
 back as a promise.
 
-### Usage
+## Usage
 
-#### Create a workhole
+### Create a workhole
 
 in main context
 
@@ -31,7 +31,7 @@ import Workhole from "workhole.js"
 const workhole = new Workhole(self)
 ```
 
-#### Share an object
+### Share an object
 
 In "exporting" context:
 
@@ -61,14 +61,14 @@ Note the actual object is not transferred,
 but a handle for it is created instead on
 "importing" side.
 
-#### Call methods of shared object
+### Call methods of shared object
 
 In "importing" context:
 ```js
 console.log(await summator.sum(1, 2)) //3
 ```
 
-### Caveats
+## Caveats
 
 As arguments are transferred between context, don't forget 
 how sending objects between contexts works. Functions and DOM elements
