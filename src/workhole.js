@@ -2,27 +2,6 @@
 Workhole module by seihoukei
 
 Creates a wormhole between worker and main context to call object methods and get results over promise.
-
-Usage:
-
-1) create a workhole wrapper for worker
-
-workhole = new Workhole(worker / self)
-
-2) export an object
-
-workhole.export(object, name)
-
-3) import an object in another context
-
-remote = workhole.import(name)
-or
-workhole.onexport = (name) => remote = workhole.import(name)
-or remote = await workhole.expectExport(name)
-
-4) call methods of imported object
-
-console.log(await remote.add(2,3))
 */
 
 const promises = {}
